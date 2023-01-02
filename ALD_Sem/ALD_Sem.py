@@ -6,13 +6,14 @@ import numpy as np
 
 #initialization, w is the width of the canvas, h is the height
 #number of rows (x) and columns (y)
+#imglist exists as a means to stop the garbage collector from deleting images
 x=10; y=10
 w=45*x; h=45*y
 root = tkinter.Tk()
 canvas = tkinter.Canvas(width=w, height=h)
 arr = [[0 for i in range(x)] for _ in range(y)]
-
 imglist = []
+
 #printing method for array testing
 class Print:
     def ArrPrint(arr, x, y):
@@ -21,7 +22,7 @@ class Print:
                 print(arr[i][j], end = " ")
             print()
 
-#class for all my random number methods
+#class for all random number methods
 class Rng:
     #Chooses one of 4 values. Each value can be assigned a chance, this allows us to make some tiles rarer.
     def Choose4(n1, c1, n2, c2, n3, c3, n4, c4):
