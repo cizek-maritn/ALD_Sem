@@ -7,7 +7,7 @@ Program funguje jak pro čtvercové světy, tak i pro obdelníkové.
 Rozměry kanvasu jsou vypočítané od rozměrů světa (násobím počet řádků/sloupců 45, protože obrázky mají rozměr 45x45 pixelů)
 
 Dále se dá manipulovat se šancí na výskyt určitých obrázků (řádek 61-69, případně řádek 27 pro metodu Choose4())
-Při volání metody výběru je vždy zadáno číslo obrázku a poté jeho šance na výskyt v procentech (maximum dohromady by tedo mělo být 100, minimum 1).
+Při volání metody výběru je vždy zadáno číslo obrázku a poté jeho šance na výskyt v procentech.
 
 Čísla/jména obrázků jsou neměnná, jelikož je na jejich jménech a uspořádání postavena logika vytváření světa.
 
