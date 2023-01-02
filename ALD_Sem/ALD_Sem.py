@@ -40,9 +40,7 @@ class Rng:
     def Fill(arr,x,y):
         #The top left corner can have any value. There are 16 images, therefore a random integer between 1 and 16 is chosen
         arr[0][0]=random.randint(1,16)
-        #This fills the rest of the top row. If the value to the left in the array is higher than 5 and lower than 12,
-        #Rng.Choose8() chooses an image number, that connects on the left side.
-        #The Choose8() call in the else statement, chooses an image number that doesn't connect on the left side
+        #This fills the rest of the top row.
         for i in range(x-1):
             if ((arr[0][i] >= 5) and (arr[0][i] <= 12)):
                 arr[0][i+1]=random.choice([2, 3, 5, 7, 9, 11, 14, 15])
@@ -69,28 +67,6 @@ class Rng:
                         arr[i+1][j+1]=Rng.Choose4(1, 30, 6, 25, 10, 30, 16, 15)
 #class for drawing
 class Draw():
-    #drawing test for arrays with 3 values
-    def DrawTest(arr, x, y):
-        for i in range(x):
-            for j in range(y):
-                k=arr[i][j]
-                x1=(j)*w/x
-                x2=(j+1)*w/x
-                y1=(i)*h/y
-                y2=(i+1)*h/y
-                if k == 1:
-                    canvas.create_rectangle(x1,y1,x2,y2, fill='red')
-                elif k == 2:
-                    canvas.create_rectangle(x1,y1,x2,y2, fill='green')
-                else:
-                    canvas.create_rectangle(x1,y1,x2,y2, fill='blue')
-    #Method for figuring out how to display an image
-    def ImageTest(self):
-        self.im=Image.open(r'images\1.png')
-        ph=ImageTk.PhotoImage(self.im)
-        root.ph = ph
-        canvas.create_image(50, 50, image=ph, anchor='nw')
-
     #Method for drawing an image using the array values
     def DrawImage(self, arr, x, y):
         for i in range(y):
